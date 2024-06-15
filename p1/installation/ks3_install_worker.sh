@@ -11,7 +11,7 @@
       # Wait for the node token to be available
       while ! [ -f /vagrant/node-token ]
       do
-      sleep 1
+            sleep 1
       done
 
       # Read token from shared folder
