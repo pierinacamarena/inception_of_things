@@ -2,13 +2,12 @@
 #!/bin/sh
 set -e  # Exit on error
 
-# Ensure SERVER_IP is defined
 echo "Updating APK and installing packages..."
 sudo apk update
 sudo apk add curl
 sudo apk add net-tools
 
-echo "k3s installation on node with IP: $SERVER_IP"
+echo "k3s installation on node"
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --node-ip=$SERVER_IP --flannel-iface=eth1" K3S_KUBECONFIG_MODE="644" sh -s -
 
 
