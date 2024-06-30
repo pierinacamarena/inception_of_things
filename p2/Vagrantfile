@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = BOX
 #   config.vm.box_version = BOX_VERSION
-  config.vm.synced_folder "provisions/", "/vagrant"
+  config.vm.synced_folder "provisions/manifests", "/vagrant"
 
   # config.vbguest.installer_options = { allow_kernel_upgrade: true }
 
