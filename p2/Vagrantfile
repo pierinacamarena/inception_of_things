@@ -1,6 +1,8 @@
 
 
-BOX = "centos/7"
+# BOX = "centos/7"
+BOX = "generic/alpine317"
+BOX_VERSION = "4.3.12"
 # BOX_VERSION = "4.3.12"
 
 SERVER_NAME = "pcamarenS"
@@ -12,7 +14,7 @@ MEMORY = 1024
 Vagrant.configure("2") do |config|
 
   config.vm.box = BOX
-#   config.vm.box_version = BOX_VERSION
+  config.vm.box_version = BOX_VERSION
   config.vm.synced_folder "provisions/manifests", "/vagrant"
 
   # config.vbguest.installer_options = { allow_kernel_upgrade: true }

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-two-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>app2</title>
+    </head>
+    <body>
+        <h1>Yo</h1>
+    </body>
+    </html>
