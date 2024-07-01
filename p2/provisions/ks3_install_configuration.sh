@@ -32,12 +32,19 @@ sleep 30
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app1/app1.deployment.yaml
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app1/app1.service.yaml
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app1/app1.ingress.yaml
+sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app1/app1.configmap.yaml
+
 
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app2/app2.deployment.yaml
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app2/app2.service.yaml
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app2/app2.ingress.yaml
+sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app2/app2.configmap.yaml
+
 
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app3/app3.deployment.yaml
+sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app3/app3.service.yaml
 sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app3/app3.ingress.yaml
+sudo /usr/local/bin/k3s kubectl apply -f /vagrant/app3/app3.configmap.yaml
+
 
 echo "Setup complete!"
