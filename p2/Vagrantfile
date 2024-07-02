@@ -1,0 +1,33 @@
+
+
+# BOX = "centos/7"
+BOX = "generic/alpine317"
+BOX_VERSION = "4.3.12"
+# BOX_VERSION = "4.3.12"
+
+SERVER_NAME = "pcamarenS"
+SERVER_IP = "192.168.56.110"
+
+CPU = 1
+MEMORY = 1024
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = BOX
+  config.vm.box_version = BOX_VERSION
+  config.vm.synced_folder "provisions/manifests", "/vagrant"
+
+  # config.vbguest.installer_options = { allow_kernel_upgrade: true }
+
+  config.vm.provider "virtualbox" do |vb|
+      vb.memory = MEMORY
+      vb.cpus = CPU
+  end
+
+  config.vm.define SERVER_NAME do |server|
+    server.vm.hostname = SERVER_NAME
+    server.vm.network "private_network", ip: SERVER_IP
+    server.vm.provision "shell", path: "provisions/ks3_install_configuration.sh",  env: {"SERVER_IP" => SERVER_IP}
+  end
+
+end
